@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PansiyonDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Kasa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OdaKayitId" Type="int" />
+    <Property Name="Gelir" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Musteriler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TcNo" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="Adi" Type="varchar" MaxLength="150" />
+    <Property Name="Soyadi" Type="varchar" MaxLength="150" />
+    <Property Name="DogumTarihi" Type="varchar" MaxLength="150" />
+    <Property Name="TelNo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OdaKayitlari">
+    <Key>
+      <PropertyRef Name="odaKayitId" />
+    </Key>
+    <Property Name="odaKayitId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="musteriId" Type="int" />
+    <Property Name="odaId" Type="int" />
+    <Property Name="girisTarihi" Type="nvarchar" MaxLength="150" />
+    <Property Name="cikisTarihi" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Odalar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OdaNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="OdaKisiSayisi" Type="int" />
+    <Property Name="OdaDurumu" Type="nvarchar" MaxLength="150" />
+    <Property Name="OdaTipi" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="PremiumOda">
+    <Key>
+      <PropertyRef Name="OdaId" />
+    </Key>
+    <Property Name="OdaId" Type="int" Nullable="false" />
+    <Property Name="OdaUcret" Type="nvarchar" MaxLength="150" />
+    <Property Name="OzellikTv" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikBuzdolabi" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikOzelServis" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikBilgisayar" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikCamasirMakinesi" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikBulasikMakinesi" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikFirin" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Rezervasyonlar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MusteriId" Type="int" />
+    <Property Name="OdaId" Type="int" />
+    <Property Name="RezervasyonTarihi" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="StandartOda">
+    <Key>
+      <PropertyRef Name="OdaId" />
+    </Key>
+    <Property Name="OdaId" Type="int" Nullable="false" />
+    <Property Name="OdaUcret" Type="nvarchar" MaxLength="150" />
+    <Property Name="OzellikTv" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikBuzdolabi" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikOzelServis" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikBilgisayar" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikCamasirMakinesi" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikBulasikMakinesi" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikFirin" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="VipOda">
+    <Key>
+      <PropertyRef Name="OdaId" />
+    </Key>
+    <Property Name="OdaId" Type="int" Nullable="false" />
+    <Property Name="OdaUcret" Type="nvarchar" MaxLength="150" />
+    <Property Name="OzellikTv" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikBuzdolabi" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikOzelServis" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikBilgisayar" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikCamasirMakinesi" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikBulasikMakinesi" Type="nvarchar" MaxLength="50" />
+    <Property Name="OzellikFirin" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Kasa_OdaKayitlari1">
+    <End Role="OdaKayitlari" Type="Self.OdaKayitlari" Multiplicity="0..1" />
+    <End Role="Kasa" Type="Self.Kasa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OdaKayitlari">
+        <PropertyRef Name="odaKayitId" />
+      </Principal>
+      <Dependent Role="Kasa">
+        <PropertyRef Name="OdaKayitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OdaKayitlari_Musteriler">
+    <End Role="Musteriler" Type="Self.Musteriler" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OdaKayitlari" Type="Self.OdaKayitlari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Musteriler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OdaKayitlari">
+        <PropertyRef Name="musteriId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OdaKayitlari_Odalar">
+    <End Role="Odalar" Type="Self.Odalar" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OdaKayitlari" Type="Self.OdaKayitlari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Odalar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OdaKayitlari">
+        <PropertyRef Name="odaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PremiumOda_Odalar">
+    <End Role="Odalar" Type="Self.Odalar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PremiumOda" Type="Self.PremiumOda" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Odalar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PremiumOda">
+        <PropertyRef Name="OdaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezervasyonlar_Musteriler">
+    <End Role="Musteriler" Type="Self.Musteriler" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Rezervasyonlar" Type="Self.Rezervasyonlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Musteriler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Rezervasyonlar">
+        <PropertyRef Name="MusteriId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezervasyonlar_Odalar">
+    <End Role="Odalar" Type="Self.Odalar" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Rezervasyonlar" Type="Self.Rezervasyonlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Odalar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Rezervasyonlar">
+        <PropertyRef Name="OdaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StandartOda_Odalar">
+    <End Role="Odalar" Type="Self.Odalar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="StandartOda" Type="Self.StandartOda" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Odalar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="StandartOda">
+        <PropertyRef Name="OdaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VipOda_Odalar">
+    <End Role="Odalar" Type="Self.Odalar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VipOda" Type="Self.VipOda" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Odalar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="VipOda">
+        <PropertyRef Name="OdaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PansiyonDBModelStoreContainer">
+    <EntitySet Name="Kasa" EntityType="Self.Kasa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Musteriler" EntityType="Self.Musteriler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OdaKayitlari" EntityType="Self.OdaKayitlari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Odalar" EntityType="Self.Odalar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PremiumOda" EntityType="Self.PremiumOda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rezervasyonlar" EntityType="Self.Rezervasyonlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StandartOda" EntityType="Self.StandartOda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VipOda" EntityType="Self.VipOda" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Kasa_OdaKayitlari1" Association="Self.FK_Kasa_OdaKayitlari1">
+      <End Role="OdaKayitlari" EntitySet="OdaKayitlari" />
+      <End Role="Kasa" EntitySet="Kasa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OdaKayitlari_Musteriler" Association="Self.FK_OdaKayitlari_Musteriler">
+      <End Role="Musteriler" EntitySet="Musteriler" />
+      <End Role="OdaKayitlari" EntitySet="OdaKayitlari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OdaKayitlari_Odalar" Association="Self.FK_OdaKayitlari_Odalar">
+      <End Role="Odalar" EntitySet="Odalar" />
+      <End Role="OdaKayitlari" EntitySet="OdaKayitlari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PremiumOda_Odalar" Association="Self.FK_PremiumOda_Odalar">
+      <End Role="Odalar" EntitySet="Odalar" />
+      <End Role="PremiumOda" EntitySet="PremiumOda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rezervasyonlar_Musteriler" Association="Self.FK_Rezervasyonlar_Musteriler">
+      <End Role="Musteriler" EntitySet="Musteriler" />
+      <End Role="Rezervasyonlar" EntitySet="Rezervasyonlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rezervasyonlar_Odalar" Association="Self.FK_Rezervasyonlar_Odalar">
+      <End Role="Odalar" EntitySet="Odalar" />
+      <End Role="Rezervasyonlar" EntitySet="Rezervasyonlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StandartOda_Odalar" Association="Self.FK_StandartOda_Odalar">
+      <End Role="Odalar" EntitySet="Odalar" />
+      <End Role="StandartOda" EntitySet="StandartOda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VipOda_Odalar" Association="Self.FK_VipOda_Odalar">
+      <End Role="Odalar" EntitySet="Odalar" />
+      <End Role="VipOda" EntitySet="VipOda" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

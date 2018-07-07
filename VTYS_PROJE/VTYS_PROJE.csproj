@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{79787EFD-03A7-4739-97E4-16C88282DAAB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VTYS_PROJE</RootNamespace>
+    <AssemblyName>VTYS_PROJE</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Artdesigner-Urban-Stories-House.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormKasaDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKasaDetay.Designer.cs">
+      <DependentUpon>FormKasaDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOdaGirisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOdaGirisi.Designer.cs">
+      <DependentUpon>FormOdaGirisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOdaGirisiEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOdaGirisiEkle.Designer.cs">
+      <DependentUpon>FormOdaGirisiEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRezervasyon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRezervasyon.Designer.cs">
+      <DependentUpon>FormRezervasyon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRezervasyonEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRezervasyonEkle.Designer.cs">
+      <DependentUpon>FormRezervasyonEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiris.Designer.cs">
+      <DependentUpon>FormGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKasa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKasa.Designer.cs">
+      <DependentUpon>FormKasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKilit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKilit.Designer.cs">
+      <DependentUpon>FormKilit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMusteri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMusteri.Designer.cs">
+      <DependentUpon>FormMusteri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMusteriEkleDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMusteriEkleDuzenle.Designer.cs">
+      <DependentUpon>FormMusteriEkleDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOdalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOdalar.Designer.cs">
+      <DependentUpon>FormOdalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOdalarEkleDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOdalarEkleDuzenle.Designer.cs">
+      <DependentUpon>FormOdalarEkleDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kasa.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Musteriler.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OdaKayitlari.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Odalar.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PremiumOda.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Rezervasyonlar.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StandartOda.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VipOda.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormKasaDetay.resx">
+      <DependentUpon>FormKasaDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOdaGirisi.resx">
+      <DependentUpon>FormOdaGirisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOdaGirisiEkle.resx">
+      <DependentUpon>FormOdaGirisiEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRezervasyon.resx">
+      <DependentUpon>FormRezervasyon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRezervasyonEkle.resx">
+      <DependentUpon>FormRezervasyonEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiris.resx">
+      <DependentUpon>FormGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKasa.resx">
+      <DependentUpon>FormKasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKilit.resx">
+      <DependentUpon>FormKilit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMusteri.resx">
+      <DependentUpon>FormMusteri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMusteriEkleDuzenle.resx">
+      <DependentUpon>FormMusteriEkleDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOdalar.resx">
+      <DependentUpon>FormOdalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOdalarEkleDuzenle.resx">
+      <DependentUpon>FormOdalarEkleDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\FormOdalar.datasource" />
+    <None Include="Properties\DataSources\Musteriler.datasource" />
+    <None Include="Properties\DataSources\OdaKayitlari.datasource" />
+    <None Include="Properties\DataSources\Odalar.datasource" />
+    <None Include="Properties\DataSources\Rezervasyonlar.datasource" />
+    <None Include="Properties\DataSources\VTYS_PROJE.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\VTYS_PROJE.Properties.Resources1.datasource" />
+    <None Include="Properties\DataSources\VTYS_PROJE.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\VTYS_PROJE.Properties.Settings1.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Artdesigner-Urban-Stories-House.ico" />
+    <Content Include="MetroFramework.txt" />
+    <Content Include="Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

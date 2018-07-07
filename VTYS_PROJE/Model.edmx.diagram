@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7f59040793b44db7b858a6f3ccc19df7" Name="Diagram1" ZoomLevel="63" DisplayType="false">
+        <EntityTypeShape EntityType="PansiyonDBModel.Kasa" Width="1.5" PointX="8.25" PointY="5" />
+        <EntityTypeShape EntityType="PansiyonDBModel.Musteriler" Width="1.5" PointX="3.75" PointY="3.625" />
+        <EntityTypeShape EntityType="PansiyonDBModel.OdaKayitlari" Width="1.5" PointX="6" PointY="4.625" />
+        <EntityTypeShape EntityType="PansiyonDBModel.Odalar" Width="1.5" PointX="0.75" PointY="8.5" />
+        <EntityTypeShape EntityType="PansiyonDBModel.PremiumOda" Width="1.5" PointX="3" PointY="7.75" />
+        <EntityTypeShape EntityType="PansiyonDBModel.Rezervasyonlar" Width="1.5" PointX="6" PointY="8.875" />
+        <EntityTypeShape EntityType="PansiyonDBModel.StandartOda" Width="1.5" PointX="3" PointY="18.375" />
+        <EntityTypeShape EntityType="PansiyonDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PansiyonDBModel.VipOda" Width="1.5" PointX="3" PointY="11.375" />
+        <AssociationConnector Association="PansiyonDBModel.FK_Kasa_OdaKayitlari1" />
+        <AssociationConnector Association="PansiyonDBModel.FK_OdaKayitlari_Musteriler" />
+        <AssociationConnector Association="PansiyonDBModel.FK_Rezervasyonlar_Musteriler" />
+        <AssociationConnector Association="PansiyonDBModel.FK_OdaKayitlari_Odalar" />
+        <AssociationConnector Association="PansiyonDBModel.FK_PremiumOda_Odalar" />
+        <AssociationConnector Association="PansiyonDBModel.FK_Rezervasyonlar_Odalar" />
+        <AssociationConnector Association="PansiyonDBModel.FK_StandartOda_Odalar" />
+        <AssociationConnector Association="PansiyonDBModel.FK_VipOda_Odalar" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
